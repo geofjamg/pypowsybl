@@ -26,12 +26,12 @@ This project contains both Java and Python source files. To build the project, y
 
 ### Ubuntu
 ```
-$> sudo apt install python3 python3-jpype python3-wheel python3-wheel
+$> sudo apt install python3 python3-jpype python3-wheel python3-wheel python3-pip
 ```
 
 ### CentOS
 ```
-$> sudo yum install python3 python3-jpype python3-wheel python3-wheel
+$> sudo yum install python3 python3-jpype python3-wheel python3-wheel python3-pip
 ```
 
 ## Install
@@ -67,6 +67,18 @@ Once it's done, you simply have to install the package:
 ```
 $> pip3 install target/dist/pypowsybl-1.0.0-py3-none-any.whl
 ```
+
+### Reinstall
+In case of any change from the binaries or from the sources (either from Java code or from Python code), you have to uninstall the package:
+```
+$> pip3 uninstall target/dist/pypowsybl-1.0.0-py3-none-any.whl
+```
+Do not forget to clean if you work from binaries:
+```
+$> mvn clean
+```
+
+Then follow the install part again.
 
 ### Demo
 A small demo is provided in the `demo` folder. It shows how to load a case-file, run a load-flow and export the updated network to another case file to the temporary directory.

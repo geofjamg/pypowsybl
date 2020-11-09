@@ -21,6 +21,6 @@ def run(network, parameters=None, implementation=None):
     :return a LoadFlowResult instance
     """
     if (parameters is None):
-        parameters = LoadFlowParameters()
+        parameters = LoadFlowParameters.load()
 
     return LoadFlow.find(implementation).run(network, parameters)
