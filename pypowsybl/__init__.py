@@ -3,8 +3,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import atexit
 import os
 import jpype
+import jpype.imports
 
 def start():
     """
@@ -14,7 +16,6 @@ def start():
         return
 
     classpath = [os.path.join(os.path.dirname(__file__), 'lib', '*')]
-
     jpype.startJVM(jpype.getDefaultJVMPath(), "-ea", classpath=classpath, convertStrings=False)
 
 def stop():
@@ -23,3 +24,10 @@ def stop():
     """
     if jpype.isJVMStarted():
         jpype.shutdownJVM()
+
+# Add a hook to properly stop the JVM and start the JVM
+atexit.register(stop)
+start()
+
+from .LoadFlow import LoadFlow, LoadFlowParameters
+from .Network import Network
