@@ -1,0 +1,12 @@
+{
+  "version": "1.4",
+  "voltageInitMode": "PREVIOUS_VALUES",
+  "transformerVoltageControlOn": true,
+  "phaseShifterRegulationOn": false,
+  "noGeneratorReactiveLimits": true,
+  "specificCompatibility": false,
+  "dc": false,
+  "balanceType": "PROPORTIONAL_TO_LOAD",
+  "extensions": {
+  }
+}
