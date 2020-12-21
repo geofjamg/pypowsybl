@@ -7,6 +7,7 @@ import os
 import tempfile
 
 from pypowsybl import Network, LoadFlow, LoadFlowParameters
+from pypowsybl import ContingencyList, SecurityAnalysis, SecurityAnalysisParameters
 
 network = Network.load("eurostag-tutorial-example1.xml")
 print(network.getId())
@@ -17,3 +18,8 @@ print("Computation OK? {}".format(result.isOk()))
 print("Metrics: {}".format(result.getMetrics()))
 
 Network.save(network, os.path.join(tempfile.gettempdir(), "eurostag-tutorial-example1-with-loadflow.xml"), "XIIDM")
+
+saParameters = SecurityAnalysisParameters.load("sa-parameters.json")
+contingencies = ContingencyList.load("contingencies.groovy")
+saResult = SecurityAnalysis.run(network, contingencies, saParameters)
+SecurityAnalysis.print(network, saResult)
