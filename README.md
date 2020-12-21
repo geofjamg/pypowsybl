@@ -70,7 +70,7 @@ $> pip3 install target/dist/pypowsybl-1.0.0-py3-none-any.whl
 
 *Note:* in case of any change from the binaries or from the sources (either from Java code or from Python code), you have to reinstall the package either by uninstalling and reinstalling the package or by passing the `-I` option to `pip3`:
 ```
-$> pip3 install target/dist/pypowsybl-1.0.0-py3-none-any.whl
+$> pip3 install -I target/dist/pypowsybl-1.0.0-py3-none-any.whl
 ```
 
 ### Demo
