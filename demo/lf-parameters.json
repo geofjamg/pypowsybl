@@ -1,6 +1,6 @@
 {
   "version" : "1.4",
-  "voltageInitMode" : "PREVIOUS_VALUES",
+  "voltageInitMode" : "DC_VALUES",
   "transformerVoltageControlOn" : true,
   "phaseShifterRegulationOn" : false,
   "noGeneratorReactiveLimits" : true,
